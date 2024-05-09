@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [TabelaController::class, 'tabela_brasileiro']);
+Route::get('/', [TabelaController::class, 'atualizar']);
