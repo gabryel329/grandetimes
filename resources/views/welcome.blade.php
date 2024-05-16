@@ -106,20 +106,19 @@
 
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-body-tertiary rounded">
-          <h4 class="fst-italic">About</h4>
-          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+        <div id="data-atualizacao" class="p-4 mb-3 bg-body-tertiary rounded">
+            <h4 class="fst-italic">Data de atualização</h4>
+            <p id="data-atual" class="mb-0">07/05/2024</p>
         </div>
 
         <div>
-          <h4 class="fst-italic">Recent posts</h4>
+          <h4 class="fst-italic">Recentes posts</h4>
           <ul class="list-unstyled">
             <li>
               <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
                 <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
                 <div class="col-lg-8">
-                  <h6 class="mb-0">Example blog post title</h6>
-                  <small class="text-body-secondary">January 15, 2024</small>
+                  <h6 class="mb-0">Melhores Jogadores</h6>
                 </div>
               </a>
             </li>
@@ -127,8 +126,7 @@
               <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
                 <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
                 <div class="col-lg-8">
-                  <h6 class="mb-0">This is another blog post title</h6>
-                  <small class="text-body-secondary">January 14, 2024</small>
+                  <h6 class="mb-0">Tabela Brasileirão</h6>
                 </div>
               </a>
             </li>
@@ -136,8 +134,7 @@
               <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
                 <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
                 <div class="col-lg-8">
-                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
-                  <small class="text-body-secondary">January 13, 2024</small>
+                  <h6 class="mb-0">Melhores Empresas do Brasil</h6>
                 </div>
               </a>
             </li>
@@ -153,6 +150,26 @@
   <p>A&B - Entertainment and Business</p>
 </footer>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function atualizarData() {
+      var dataElemento = document.getElementById('data-atual');
+      var dataAtual = new Date();
+      var meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro',
+          'Outubro', 'Novembro', 'Dezembro'
+      ];
+      var mesNome = meses[dataAtual.getMonth()];
+      var dia = dataAtual.getDate();
+      var ano = dataAtual.getFullYear();
+      var dataFormatada = mesNome + ' ' + dia + ', ' + ano;
 
+      dataElemento.textContent = dataFormatada;
+  }
+
+  // Atualiza a data inicialmente
+  atualizarData();
+
+  // Define um intervalo para chamar a função a cada 3 horas (em milissegundos)
+  setInterval(atualizarData, 3 * 60 * 60 * 1000); // 3 horas * 60 minutos * 60 segundos * 1000 milissegundos
+</script>
     </body>
 </html>
