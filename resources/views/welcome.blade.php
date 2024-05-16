@@ -67,7 +67,7 @@
   <div class="row g-5">
     <div class="col-md-8">
         <table class="table table-hover">
-            <thead class="table-dark">
+            <thead class="table-light">
                 <tr>
                     <th>#</th>
                     <th colspan="1">Nome</th>
